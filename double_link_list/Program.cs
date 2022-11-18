@@ -83,7 +83,7 @@ namespace doubble_link_list
                 previous.next = current;    
                 current = current.next;
             }
-            return (current != null):
+            return (current != null);
         }
         public bool dellNode (int rollNo)
         {
@@ -116,6 +116,46 @@ namespace doubble_link_list
                 return true;
             else
                 return false;
+        }
+        public void ascending()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecord in the Descending order of" + "Roll number are:\n");
+                Node currentNode;
+                //membawa currentNode ke node paling belakang
+                currentNode = START;
+                while (currentNode.next != null)
+                {
+                    currentNode = currentNode.next;
+                }
+                //membawa data dari last node ke first node
+                while (currentNode != null)
+                {
+                    Console.Write(currentNode.noMhs + " " + currentNode.name + "\n");
+                    currentNode = currentNode.prev;
+                }
+            }
+        }
+        public void descending()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\n Record in the Descanding order of" + "roll number are\n");
+                Node currentNode;
+                for (currentNode = START; currentNode != null; currentNode = currentNode.next)
+                { }
+
+                while (currentNode != null)
+                {
+                    Console.WriteLine(currentNode.noMhs + "" + currentNode.name + "\n");
+                    currentNode = currentNode.next;
+                }
+            }
         }
     }
 }
