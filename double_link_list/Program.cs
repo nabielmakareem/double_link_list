@@ -110,5 +110,12 @@ namespace doubble_link_list
             current.next.prev = previous;
             return true;
         }
+        public bool listEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
+        }
     }
 }
